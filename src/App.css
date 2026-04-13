@@ -1,0 +1,124 @@
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+}
+
+.fullpart {
+  background-color: #f0f4f8;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backgroundpart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.contentcard {
+  background: white;
+  width: 100%;
+  max-width: 400px; /* Scales down on mobile */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+
+.name { color: #007b8f; margin: 10px 0; font-size: 1.5rem; }
+.item-text, .amount-text { color: #555; margin: 5px 0; }
+.item-text span, .amount-text span { font-weight: bold; color: #333; }
+
+.buttonpart { margin-top: 25px; }
+
+.profilebutton {
+  background: #007b8f;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 123, 143, 0.2);
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 350px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.submitbtn {
+  width: 100%;
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-x { background: none; border: none; font-size: 24px; cursor: pointer; color: #666; }
+.cancelbuttonarea { display: flex; justify-content: flex-end; }
+
+/* --- RESPONSIVENESS CRITERIA --- */
+
+/* Laptops / Desktops (1920x1080, 1366x768) */
+@media (min-width: 1025px) {
+  .contentcard { max-width: 450px; padding: 50px; }
+  .name { font-size: 1.8rem; }
+}
+
+/* Tablets (768x1024) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contentcard { max-width: 380px; }
+}
+
+/* Mobile Large (425x800) */
+@media (max-width: 425px) {
+  .contentcard { max-width: 280px; padding: 25px; }
+  .name { font-size: 1.3rem; }
+  .profile-pic { width: 70px; height: 70px; }
+}
+
+/* Mobile Small (375x667) */
+@media (max-width: 375px) {
+  .contentcard { max-width: 250px; padding: 20px; }
+  .congratshead { font-size: 1.2rem; }
+  .profilebutton { padding: 10px 20px; font-size: 0.9rem; }
+}
